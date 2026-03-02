@@ -4,7 +4,6 @@
 //     public static int binaryno(int arr[],int target,int n){
 //         int start =0;
 //         int end=n-1;
-
 //         while(start<=end){
 //         int mid=(start+end)/2;
 //             if(target==arr[mid]){
@@ -75,10 +74,10 @@
 //     }
 // }
 // ----------------------------------------------------------------------------
-// order of known search
+// order of known search inc,dec
 // import java.util.*;
 // public class binarysearch{
-//     public static int binary(int arr[],int target){
+// //     public static int binary(int arr[],int target){
 //         int start=0;
 //         int end=arr.length-1;
 //         
