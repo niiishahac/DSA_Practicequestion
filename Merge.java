@@ -20,22 +20,44 @@ public class Merge{
         }
         return ans;
     }
+    public static int[] mergeSort(int [] arr){
+        // create two array of n/2 size
+        int[] arr1=new int[arr.length/2];
+        int[] arr2=new int[arr.length-arr.length/2];
+        if (arr.length <= 1) {
+            return arr;
+        }
+        int ind=0;
+        for(int i=0;i<arr1.length;i++){
+            arr1[i]=arr[ind++];
+        }
+        for(int i=0;i<arr2.length;i++){
+            arr2[i]=arr[ind++];
+        }
+        arr1=mergeSort(arr1);
+        arr2=mergeSort(arr2);
+        return mergearaay(arr1,arr2);
+    } 
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
-        int[] arr1=new int[n];
+        int[] arr=new int[n];
         for(int i=0;i<n;i++){
-            arr1[i]=sc.nextInt();
-        }
-        int m=sc.nextInt();
-        int[] arr2=new int[m];
-        for(int i=0;i<m;i++){
-            arr2[i]=sc.nextInt();
-        }
-        int[] ans=mergearaay(arr1,arr2);
-        for(int i=0;i<ans.length;i++){
-            System.out.print(ans[i]+" ");
-        }
+            arr[i]=sc.nextInt();
+        } 
+        int[] sortedArr=mergeSort(arr);
+        for(int i=0;i<sortedArr.length;i++){
+    System.out.print(sortedArr[i] + " ");
+}
+        // int m=sc.nextInt();
+        // int[] arr2=new int[m];
+        // for(int i=0;i<m;i++){
+        //     arr2[i]=sc.nextInt();
+        // }
+        // int[] ans=mergearaay(arr1,arr2);
+        // for(int i=0;i<ans.length;i++){
+        //     System.out.print(ans[i]+" ");
+        // }
     }
 
 }
