@@ -1,4 +1,3 @@
-import java.util.*;
 public class stack {
     // get()---3---------
     //  public static void getAt(Stack<Integer> s,int index){
@@ -33,6 +32,17 @@ public class stack {
         // ---------------------------
     //     System.out.println("stack after pushing at bottom: "+s);
     // }
+    // recursively reverse the stack------------------4----------------------
+    public static void pushAtBottom(Stack<Integer> s, int element) {
+        if (s.size() == 0) {
+            s.push(element);
+            return;
+        }
+        int top = s.pop();
+        pushAtBottom(s, element);
+        s.push(top);
+
+    }
     public static void main(String[] args) {
         // stack operation and declarartion------------1
         // Stack<Integer> s=new Stack<>();

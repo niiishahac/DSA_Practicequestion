@@ -165,7 +165,27 @@ public class slinding1 {
 public static void firstneg(int[] arr,int k){
     int n=arr.length;
     List<Integer> res=new ArrayList<>();
-    
+    Queue<Integer> q=new LinkedList<>();
+    // first window
+    for(int i=0;i<k;i++){
+        if(arr[i]<0){
+            q.add(i);
+        }
+    }
+    res.add(q.isEmpty()?0:q.peek());
+    // slide
+    for(int i=k;i<n;i++){
+        // remove the element which is out of the window
+        if(!q.isEmpty()&& arr[i-k]==q.peek()){
+            q.poll();
+        }
+        // add the new element
+        if(arr[i]<0){
+            q.add(i);
+        }
+        res.add(q.isEmpty()?0:q.peek());
+}
+    System.out.println(res);
 }
 
 public static void main(String args[]){
@@ -178,6 +198,7 @@ public static void main(String args[]){
        }
        System.out.println("Enter the size of subarray");
        int k=sc.nextInt();
+       firstneg(arr, k);
 
 
 }
