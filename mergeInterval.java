@@ -29,3 +29,63 @@ public class mergeInterval {
     }
     
 }
+// ----------------------------------------------
+// leedcode 729. My Calendar I
+// import java.util.*;
+
+// class MyCalendar {
+
+//     List<int[]> list;
+
+//     public MyCalendar() {
+//         list = new ArrayList<>();
+//     }
+    
+//     public boolean book(int start, int end) {
+        
+//         for(int[] curr : list){
+            
+//             // overlap check
+//             if(start < curr[1] && curr[0] < end){
+//                 return false;
+//             }
+//         }
+        
+//         list.add(new int[]{start, end});
+//         return true;
+//     }
+// }
+// ----------------------------min meeting room
+// import java.util.*;
+
+// class Solution {
+//     public int minMeetingRooms(int[] start, int[] end) {
+        
+//         int n = start.length;
+
+//         Arrays.sort(start);
+//         Arrays.sort(end);
+
+//         int room = 0;
+//         int res = 0;
+
+//         int i = 0, j = 0;
+
+//         while(i < n && j < n){
+            
+//             if(start[i] < end[j]){
+//                 room++;
+//                 res = Math.max(res, room);
+//                 i++;
+//             }
+//             else{
+//                 room--;
+//                 j++;
+//             }
+//         }
+
+//         return res;
+//     }
+// }
+// ---------------------------------------------
+
