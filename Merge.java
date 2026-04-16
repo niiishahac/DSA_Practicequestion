@@ -24,6 +24,7 @@ public class Merge{
         // create two array of n/2 size
         int[] arr1=new int[arr.length/2];
         int[] arr2=new int[arr.length-arr.length/2];
+        // base case
         if (arr.length <= 1) {
             return arr;
         }
